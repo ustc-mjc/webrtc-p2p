@@ -42,13 +42,7 @@ module.exports = {
   plugins: [
     //热加载插件
     new webpack.HotModuleReplacementPlugin(),
-    new CompressionPlugin({
-      test: /\.js/,
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
-      threshold: 0,
-      minRatio: 0.8
-    })
+    new CompressionPlugin()
   ],
   //开发服务器配置
   devServer: {
@@ -60,5 +54,6 @@ module.exports = {
     host: '0.0.0.0',
     port: 8888,
     disableHostCheck: true,
+    compress: true
   }
 };
